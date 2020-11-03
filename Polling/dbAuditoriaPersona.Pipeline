@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:coreEntry>
+        <con:binding type="SOAP" isSoap12="false" xsi:type="con:SoapBindingType">
+            <con:wsdl ref="Pulling/Resources/dbAuditoria-concrete"/>
+            <con:binding>
+                <con:name>dbAuditoria_ptt-binding</con:name>
+                <con:namespace>http://xmlns.oracle.com/pcbpel/adapter/db/ClaseTresTarde/Pulling/dbAuditoria</con:namespace>
+            </con:binding>
+        </con:binding>
+        <con:xqConfiguration>
+            <con:snippetVersion>1.0</con:snippetVersion>
+        </con:xqConfiguration>
+    </con:coreEntry>
+    <con:router>
+        <con:pipeline type="request" name="request-N3f5776ff.46cde698.0.174dfb5a256.N6e83">
+            <con:stage id="_StageId-N3f5776ff.53f5541c.0.174e9430d6f.N7827" name="Stage1">
+                <con:context>
+                    <con1:userNsDecl prefix="dba" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbAuditoria" xmlns:con1="http://www.bea.com/wli/sb/stages/config"/>
+                </con:context>
+                <con:actions>
+                    <con1:assign varName="InputPersona" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f5776ff.53f5541c.0.174e9430d6f.N7826</con2:id>
+                        <con1:expr>
+                            <con2:xsltTransform xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+                                <con2:resource ref="Pulling/Resources/fileTransform"/>
+                                <con2:input>$body/dba:PersonaCollection</con2:input>
+                            </con2:xsltTransform>
+                        </con1:expr>
+                    </con1:assign>
+                </con:actions>
+            </con:stage>
+            <con:stage id="_StageId-N3f5776ff.46cde698.0.174dfb5a256.N7dc9" name="StageInsertRolesDB">
+                <con:context>
+                    <con1:userNsDecl prefix="dba" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbAuditoria" xmlns:con1="http://www.bea.com/wli/sb/stages/config"/>
+                </con:context>
+                <con:actions>
+                    <con1:log xmlns:con1="http://www.bea.com/wli/sb/stages/logging/config">
+                        <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f5776ff.46cde698.0.174dfb5a256.N7dc5</con2:id>
+                        <con1:logLevel>error</con1:logLevel>
+                        <con1:expr>
+                            <con2:xqueryText xmlns:con2="http://www.bea.com/wli/sb/stages/config">$body</con2:xqueryText>
+                        </con1:expr>
+                        <con1:message>Log_Request</con1:message>
+                    </con1:log>
+                    <con1:replace varName="body" contents-only="true" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f5776ff.46cde698.0.174dfb5a256.N7d91</con2:id>
+                        <con1:expr>
+                            <con2:xsltTransform xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+                                <con2:resource ref="Pulling/Resources/restDB"/>
+                                <con2:input>$body/dba:PersonaCollection</con2:input>
+                            </con2:xsltTransform>
+                        </con1:expr>
+                    </con1:replace>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N3f5776ff.46cde698.0.174dfb5a256.N6e82">
+            <con:stage id="_StageId-N3f5776ff.46cde698.0.174dfb5a256.N72f1" name="StageWriteFile">
+                <con:context>
+                    <con1:userNsDecl prefix="dba" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbAuditoria" xmlns:con1="http://www.bea.com/wli/sb/stages/config"/>
+                    <con1:userNsDecl prefix="dbr" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbRoles" xmlns:con1="http://www.bea.com/wli/sb/stages/config"/>
+                    <con1:variable name="nombre" path="$entrada" xmlns:con1="http://www.bea.com/wli/sb/typesystem/config">
+                        <con1:service>
+                            <con1:reference ref="Pulling/AuditoriaRequest" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                        </con1:service>
+                    </con1:variable>
+                    <con1:variable name="Entrada" path="$Entrada" asChild="false" xmlns:con1="http://www.bea.com/wli/sb/typesystem/config">
+                        <con1:schema ref="Pulling/Resources/dbRoles_table" element="RolesCollection"/>
+                    </con1:variable>
+                    <con1:variable name="requestVar" path="$requestVar" asChild="false" xmlns:con1="http://www.bea.com/wli/sb/typesystem/config">
+                        <con1:schema ref="Rest_DB/Resources/dbRoles_table" element="RolesCollection"/>
+                    </con1:variable>
+                </con:context>
+                <con:actions>
+                    <con1:log xmlns:con1="http://www.bea.com/wli/sb/stages/logging/config">
+                        <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f5776ff.46cde698.0.174dfb5a256.N72ee</con2:id>
+                        <con1:logLevel>error</con1:logLevel>
+                        <con1:expr>
+                            <con2:xqueryText xmlns:con2="http://www.bea.com/wli/sb/stages/config">$body</con2:xqueryText>
+                        </con1:expr>
+                        <con1:message>LOGENTRADARESPONSE</con1:message>
+                    </con1:log>
+                    <con1:wsCallout xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f5776ff.46cde698.0.174dfb5a256.N6a0e</con2:id>
+                        <con1:service ref="Pulling/fileAdapter" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                        <con1:operation>Write</con1:operation>
+                        <con1:request>
+                            <con1:body wrapped="false">requestVar</con1:body>
+                        </con1:request>
+                        <con1:response>
+                            <con1:body wrapped="false">requestVar</con1:body>
+                        </con1:response>
+                        <con1:requestTransform>
+                            <con1:assign varName="requestVar">
+                                <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f5776ff.53f5541c.0.174e9430d6f.N789f</con2:id>
+                                <con1:expr>
+                                    <con2:xqueryText xmlns:con2="http://www.bea.com/wli/sb/stages/config">$InputPersona</con2:xqueryText>
+                                </con1:expr>
+                            </con1:assign>
+                        </con1:requestTransform>
+                        <con1:responseTransform>
+                            <con1:replace varName="body" contents-only="true">
+                                <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f5776ff.53f5541c.0.174e9430d6f.N789c</con2:id>
+                                <con1:expr>
+                                    <con2:xsltTransform xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+                                        <con2:resource ref="Pulling/Resources/fileTransform"/>
+                                        <con2:input>$InputPersona</con2:input>
+                                    </con2:xsltTransform>
+                                </con1:expr>
+                            </con1:replace>
+                        </con1:responseTransform>
+                    </con1:wsCallout>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:flow>
+            <con:pipeline-node name="Pipeline Pair Node3">
+                <con:request>request-N3f5776ff.46cde698.0.174dfb5a256.N6e83</con:request>
+                <con:response>response-N3f5776ff.46cde698.0.174dfb5a256.N6e82</con:response>
+            </con:pipeline-node>
+            <con:route-node name="RouteNode1">
+                <con:context>
+                    <con1:userNsDecl prefix="dba" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbAuditoria" xmlns:con1="http://www.bea.com/wli/sb/stages/config"/>
+                    <con1:variable name="SchemaFile" path="$Entrada" asChild="false" xmlns:con1="http://www.bea.com/wli/sb/typesystem/config">
+                        <con1:schema ref="Pulling/Resources/SchemaFile" element="Entrada"/>
+                    </con1:variable>
+                </con:context>
+                <con:actions>
+                    <con1:route xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config">
+                        <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f5776ff.46cde698.0.174dfb5a256.N6b46</con2:id>
+                        <con1:service ref="Pulling/AuditoriaRequest" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                        <con1:operation>insert</con1:operation>
+                        <con1:outboundTransform/>
+                        <con1:responseTransform/>
+                    </con1:route>
+                </con:actions>
+            </con:route-node>
+        </con:flow>
+        <con:shared-variables>
+            <con:variable>InputPersona</con:variable>
+        </con:shared-variables>
+        <con:partner-links/>
+    </con:router>
+</con:pipelineEntry>

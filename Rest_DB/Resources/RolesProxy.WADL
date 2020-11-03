@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:wadlEntry xmlns:con="http://www.bea.com/wli/sb/resources/config">
+    <con:wadl><![CDATA[<?xml version = '1.0' encoding = 'UTF-8'?>
+<application xmlns:soa="http://www.oracle.com/soa/rest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:top="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbRoles" xmlns="http://wadl.dev.java.net/2009/02">
+   <doc title="RolesProxy">RestService</doc>
+   <grammars>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbRoles" schemaLocation="dbRoles_table.xsd"/>
+      </schema>
+   </grammars>
+   <resources>
+      <resource path="/escuelita">
+         <method name="GET" soa:wsdlOperation="dbRolesSelect">
+            <request soa:paramElement="pns:dbRolesSelect_dniInputParameters" xmlns:pns="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbRoles">
+               <param name="dni" style="query" soa:expression="$msg.dbRolesSelect_inputParameters/top:dni" type="xsd:string"/>
+            </request>
+            <response status="200">
+               <representation mediaType="application/json" element="cns:RolesCollection" xmlns:cns="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbRoles"/>
+            </response>
+         </method>
+         <method name="POST" soa:wsdlOperation="insert">
+            <request>
+               <representation mediaType="application/json" element="cns:RolesCollection" xmlns:cns="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbRoles"/>
+            </request>
+            <response status="202"/>
+         </method>
+      </resource>
+   </resources>
+</application>]]></con:wadl>
+    <con:dependencies>
+        <con:importSchema namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbRoles" schemaLocation="dbRoles_table.xsd" ref="Rest_DB/Resources/dbRoles_table"/>
+    </con:dependencies>
+</con:wadlEntry>

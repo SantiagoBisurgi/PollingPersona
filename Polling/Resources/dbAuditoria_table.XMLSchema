@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:schemaEntry xmlns:con="http://www.bea.com/wli/sb/resources/config">
+    <con:schema><![CDATA[<?xml version = '1.0' encoding = 'UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbAuditoria" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbAuditoria" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="PersonaCollection" type="PersonaCollection"/>
+   <xs:complexType name="PersonaCollection">
+      <xs:sequence>
+         <xs:element name="Persona" type="Persona" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="Persona">
+      <xs:sequence>
+         <xs:element name="documento" type="xs:integer" nillable="true"/>
+         <xs:element name="genero" type="string1" minOccurs="0" nillable="true"/>
+         <xs:element name="nombre" type="string50" minOccurs="0"/>
+         <xs:element name="fechaNacimiento" type="xs:dateTime" minOccurs="0" nillable="true"/>
+         <xs:element name="procesado" type="xs:integer" minOccurs="0" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="string1">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="1"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string50">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="50"/>
+      </xs:restriction>
+   </xs:simpleType>
+</xs:schema>]]></con:schema>
+    <con:targetNamespace>http://xmlns.oracle.com/pcbpel/adapter/db/top/dbAuditoria</con:targetNamespace>
+</con:schemaEntry>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:xmlEntry xmlns:con="http://www.bea.com/wli/sb/resources/config">
+    <con:xml-content><![CDATA[<?xml version="1.0" encoding="UTF-8" ?>
+<RolesCollection xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbRoles">
+   <Roles>
+      <id>23456</id>
+      <nombre>string3</nombre>
+      <rolIdPadre>Padre</rolIdPadre>
+   </Roles>
+</RolesCollection>]]></con:xml-content>
+</con:xmlEntry>

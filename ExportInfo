@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml-fragment name="OSB-IDE_build_1601511769065" version="v2" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+        <imp:property name="username" value="ServiceBus"/>
+        <imp:property name="description" value=""/>
+        <imp:property name="exporttime" value="Fri Oct 02 20:17:51 ART 2020"/>
+        <imp:property name="productname" value="Oracle Service Bus"/>
+        <imp:property name="productversion" value="12.2.1.3.0"/>
+        <imp:property name="projectLevelExport" value="true"/>
+    </imp:properties>
+    <imp:exportedItemInfo instanceId="Pulling/Resources/fileAdapter-concrete" typeId="WSDL">
+        <imp:properties>
+            <imp:property name="representationversion" value="0"/>
+            <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.WsdlEntryDocumentImpl"/>
+            <imp:property name="isencrypted" value="false"/>
+            <imp:property name="jarentryname" value="Pulling/Resources/fileAdapter-concrete.WSDL"/>
+            <imp:property name="extrefs" value="WSDL$Pulling$Resources$fileAdapter"/>
+        </imp:properties>
+    </imp:exportedItemInfo>
+    <imp:exportedItemInfo instanceId="Pulling/Resources/dbAuditoria_table" typeId="XMLSchema">
+        <imp:properties>
+            <imp:property name="representationversion" value="0"/>
+            <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.SchemaEntryDocumentImpl"/>
+            <imp:property name="isencrypted" value="false"/>
+            <imp:property name="jarentryname" value="Pulling/Resources/dbAuditoria_table.XMLSchema"/>
+        </imp:properties>
+    </imp:exportedItemInfo>
+    <imp:exportedItemInfo instanceId="Pulling/Resources/dbRoles_table" typeId="XMLSchema">
+        <imp:properties>
+            <imp:property name="representationversion" value="0"/>
+            <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.SchemaEntryDocumentImpl"/>
+            <imp:property name="isencrypted" value="false"/>
+            <imp:property name="jarentryname" value="Pulling/Resources/dbRoles_table.XMLSchema"/>
+        </imp:properties>
+    </imp:exportedItemInfo>
+    <imp:exportedItemInfo instanceId="Pulling/Resources/fileTransform" typeId="XSLT">
+        <imp:properties>
+            <imp:property name="representationversion" value="0"/>
+            <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.XsltEntryDocumentImpl"/>
+            <imp:property name="isencrypted" value="false"/>
+            <imp:property name="jarentryname" value="Pulling/Resources/fileTransform.XSLT"/>
+            <imp:property name="extrefs" value="XMLSchema$Pulling$Resources$dbAuditoria_table"/>
+            <imp:property name="extrefs" value="XMLSchema$Pulling$Resources$SchemaFile"/>
+        </imp:properties>
+    </imp:exportedItemInfo>
+    <imp:exportedItemInfo instanceId="Pulling/Resources/restDB" typeId="XSLT">
+        <imp:properties>
+            <imp:property name="representationversion" value="0"/>
+            <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.XsltEntryDocumentImpl"/>
+            <imp:property name="isencrypted" value="false"/>
+            <imp:property name="jarentryname" value="Pulling/Resources/restDB.XSLT"/>
+            <imp:property name="extrefs" value="XMLSchema$Pulling$Resources$dbAuditoria_table"/>
+            <imp:property name="extrefs" value="XMLSchema$Pulling$Resources$dbRoles_table"/>
+        </imp:properties>
+    </imp:exportedItemInfo>
+    <imp:exportedItemInfo instanceId="Pulling/dbAuditoria" typeId="ProxyService">
+        <imp:properties>
+            <imp:property name="representationversion" value="0"/>
+            <imp:property name="dataclass" value="com.bea.wli.sb.services.impl.ProxyServiceEntryDocumentImpl"/>
+            <imp:property name="isencrypted" value="false"/>
+            <imp:property name="jarentryname" value="Pulling/dbAuditoria.ProxyService"/>
+            <imp:property name="extrefs" value="WSDL$Pulling$Resources$dbAuditoria-concrete"/>
+            <imp:property name="extrefs" value="Pipeline$Pulling$dbAuditoriaPersona"/>
+            <imp:property name="extrefs" value="JCA$Pulling$Resources$dbAuditoria_db"/>
+        </imp:properties>
+    </imp:exportedItemInfo>
+    <imp:exportedItemInfo instanceId="Pulling/Resources/dbAuditoria-or-mappings" typeId="XML">
+        <imp:properties>
+            <imp:property name="representationversion" value="0"/>
+            <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.XmlEntryDocumentImpl"/>
+            <imp:property name="isencrypted" value="false"/>
+            <imp:property name="jarentryname" value="Pulling/Resources/dbAuditoria-or-mappings.XML"/>
+        </imp:properties>
+    </imp:exportedItemInfo>
+    <imp:exportedItemInfo instanceId="Pulling/Resources/XSLNonDeployedFiles/restDB-Target" typeId="XML">
+        <imp:properties>
+            <imp:property name="representationversion" value="0"/>
+            <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.XmlEntryDocumentImpl"/>
+            <imp:property name="isencrypted" value="false"/>
+            <imp:property name="jarentryname" value="Pulling/Resources/XSLNonDeployedFiles/restDB-Target.XML"/>
+        </imp:properties>
+    </imp:exportedItemInfo>
+    <imp:exportedItemInfo instanceId="Pulling/Resources/dbAuditoria-properties" typeId="XML">
+        <imp:properties>
+            <imp:property name="representationversion" value="0"/>
+            <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.XmlEntryDocumentImpl"/>
+            <imp:property name="isencrypted" value="false"/>
+            <imp:property name="jarentryname" value="Pulling/Resources/dbAuditoria-properties.XML"/>
+        </imp:properties>
+    </imp:exportedItemInfo>
+    <imp:exportedItemInfo instanceId="Rest_DB/Resources/dbRoles-or-mappings" typeId="XML">
+        <imp:properties>
+            <imp:property name="representationversion" value="0"/>
+            <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.XmlEntryDocumentImpl"/>
+            <imp:property name="isencrypted" value="false"/>
+            <imp:property name="jarentryname" value="Rest_DB/Resources/dbRoles-or-mappings.XML"/>
+        </imp:properties>
+    </imp:exportedItemInfo>
+    <imp:exportedItemInfo instanceId="Rest_DB/Resources/RolesProxy" typeId="WADL">
+        <imp:properties>
+            <imp:property name="representationversion" value="0"/>
+            <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.WadlEntryDocumentImpl"/>
+            <imp:property name="isencrypted" value="false"/>
+            <imp:property name="jarentryname" value="Rest_DB/Resources/RolesProxy.WADL"/>
+            <imp:property name="extrefs" value="XMLSchema$Rest_DB$Resources$dbRoles_table"/>
+        </imp:properties>
+    </imp:exportedItemInfo>
+    <imp:exportedItemInfo instanceId="Pulling/Resources/dbAuditoria-concrete" typeId="WSDL">
+        <imp:properties>
+            <imp:property name="representationversion" value="0"/>
+            <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.WsdlEntryDocumentImpl"/>
+            <imp:property name="isencrypted" value="false"/>
+            <imp:property name="jarentryname" value="Pulling/Resources/dbAuditoria-concrete.WSDL"/>
+            <imp:property name="extrefs" value="WSDL$Pulling$Resources$dbAuditoria"/>
+        </imp:properties>
+    </imp:exportedItemInfo>
+    <imp:exportedItemInfo instanceId="Pulling/_projectdata" typeId="LocationData">
+        <imp:properties>
+            <imp:property name="representationversion" value="0"/>
+            <imp:property name="dataclass" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+            <imp:property name="isencrypted" value="false"/>
+            <imp:property name="jarentryname" value="Pulling/_projectdata.LocationData"/>
+            <imp:property name="custom _special_data_class" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+        </imp:properties>
+    </imp:exportedItemInfo>
+    <imp:exportedItemInfo instanceId="Pulling/Resources/XSLNonDeployedFiles/RolesToFile-Source" typeId="XML">
+        <imp:properties>
+            <imp:property name="representationversion" value="0"/>
+            <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.XmlEntryDocumentImpl"/>
+            <imp:property name="isencrypted" value="false"/>
+            <imp:property name="jarentryname" value="Pulling/Resources/XSLNonDeployedFiles/RolesToFile-Source.XML"/>
+        </imp:properties>
+    </imp:exportedItemInfo>
+    <imp:exportedItemInfo instanceId="Pulling/Resources/AuditoriaRequest" typeId="WADL">
+        <imp:properties>
+            <imp:property name="representationversion" value="0"/>
+            <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.WadlEntryDocumentImpl"/>
+            <imp:property name="isencrypted" value="false"/>
+            <imp:property name="jarentryname" value="Pulling/Resources/AuditoriaRequest.WADL"/>
+            <imp:property name="extrefs" value="XMLSchema$Pulling$Resources$dbRoles_table"/>
+        </imp:properties>
+    </imp:exportedItemInfo>
+    <imp:exportedItemInfo instanceId="Rest_DB/dbRoles" typeId="BusinessService">
+        <imp:properties>
+            <imp:property name="representationversion" value="0"/>
+            <imp:property name="dataclass" value="com.oracle.xmlns.servicebus.business.config.impl.BusinessServiceEntryDocumentImpl"/>
+            <imp:property name="isencrypted" value="false"/>
+            <imp:property name="jarentryname" value="Rest_DB/dbRoles.BusinessService"/>
+            <imp:property name="extrefs" value="WSDL$Rest_DB$Resources$dbRoles-concrete"/>
+            <imp:property name="extrefs" value="JCA$Rest_DB$Resources$dbRoles_db"/>
+        </imp:properties>
+    </imp:exportedItemInfo>
+    <imp:exportedItemInfo instanceId="Rest_DB/Resources/dbRoles" typeId="WSDL">
+        <imp:properties>
+            <imp:property name="representationversion" value="0"/>
+            <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.WsdlEntryDocumentImpl"/>
+            <imp:property name="isencrypted" value="false"/>
+            <imp:property name="jarentryname" value="Rest_DB/Resources/dbRoles.WSDL"/>
+            <imp:property name="extrefs" value="XMLSchema$Rest_DB$Resources$dbRoles_table"/>
+        </imp:properties>
+    </imp:exportedItemInfo>
+    <imp:exportedItemInfo instanceId="Pulling/Resources/_folderdata" typeId="LocationData">
+        <imp:properties>
+            <imp:property name="representationversion" value="0"/>
+            <imp:property name="dataclass" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+            <imp:property name="isencrypted" value="false"/>
+            <imp:property name="jarentryname" value="Pulling/Resources/_folderdata.LocationData"/>
+            <imp:property name="custom _special_data_class" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+        </imp:properties>
+    </imp:exportedItemInfo>
+    <imp:exportedItemInfo instanceId="Pulling/Resources/XSLNonDeployedFiles/UnitTestXrefFunctionReturn" typeId="DVM">
+        <imp:properties>
+            <imp:property name="representationversion" value="0"/>
+            <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.DvmEntryDocumentImpl"/>
+            <imp:property name="isencrypted" value="false"/>
+            <imp:property name="jarentryname" value="Pulling/Resources/XSLNonDeployedFiles/UnitTestXrefFunctionReturn.DVM"/>
+        </imp:properties>
+    </imp:exportedItemInfo>
+    <imp:exportedItemInfo instanceId="Rest_DB/RolesProxy" typeId="ProxyService">
+        <imp:properties>
+            <imp:property name="representationversion" value="0"/>
+            <imp:property name="dataclass" value="com.bea.wli.sb.services.impl.ProxyServiceEntryDocumentImpl"/>
+            <imp:property name="isencrypted" value="false"/>
+            <imp:property name="jarentryname" value="Rest_DB/RolesProxy.ProxyService"/>
+            <imp:property name="extrefs" value="WADL$Rest_DB$Resources$RolesProxy"/>
+            <imp:property name="extrefs" value="BusinessService$Rest_DB$dbRoles"/>
+            <imp:property name="extrefs" value="WSDL$Rest_DB$Resources$dbRoles-concrete"/>
+        </imp:properties>
+    </imp:exportedItemInfo>
+    <imp:exportedItemInfo instanceId="Rest_DB/Resources/_folderdata" typeId="LocationData">
+        <imp:properties>
+            <imp:property name="representationversion" value="0"/>
+            <imp:property name="dataclass" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+            <imp:property name="isencrypted" value="false"/>
+            <imp:property name="jarentryname" value="Rest_DB/Resources/_folderdata.LocationData"/>
+            <imp:property name="custom _special_data_class" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+        </imp:properties>
+    </imp:exportedItemInfo>
+    <imp:exportedItemInfo instanceId="Pulling/dbAuditoriaPersona" typeId="Pipeline">
+        <imp:properties>
+            <imp:property name="representationversion" value="0"/>
+            <imp:property name="dataclass" value="com.bea.wli.sb.pipeline.config.impl.PipelineEntryDocumentImpl"/>
+            <imp:property name="isencrypted" value="false"/>
+            <imp:property name="jarentryname" value="Pulling/dbAuditoriaPersona.Pipeline"/>
+            <imp:property name="extrefs" value="WSDL$Pulling$Resources$dbAuditoria-concrete"/>
+            <imp:property name="extrefs" value="BusinessService$Pulling$fileAdapter"/>
+            <imp:property name="extrefs" value="BusinessService$Pulling$AuditoriaRequest"/>
+            <imp:property name="extrefs" value="XSLT$Pulling$Resources$fileTransform"/>
+            <imp:property name="extrefs" value="XMLSchema$Pulling$Resources$dbRoles_table"/>
+            <imp:property name="extrefs" value="XSLT$Pulling$Resources$restDB"/>
+            <imp:property name="extrefs" value="XMLSchema$Rest_DB$Resources$dbRoles_table"/>
+            <imp:property name="extrefs" value="XMLSchema$Pulling$Resources$SchemaFile"/>
+        </imp:properties>
+    </imp:exportedItemInfo>
+    <imp:exportedItemInfo instanceId="Pulling/fileAdapter" typeId="BusinessService">
+        <imp:properties>
+            <imp:property name="representationversion" value="0"/>
+            <imp:property name="dataclass" value="com.oracle.xmlns.servicebus.business.config.impl.BusinessServiceEntryDocumentImpl"/>
+            <imp:property name="isencrypted" value="false"/>
+            <imp:property name="jarentryname" value="Pulling/fileAdapter.BusinessService"/>
+            <imp:property name="extrefs" value="WSDL$Pulling$Resources$fileAdapter-concrete"/>
+            <imp:property name="extrefs" value="JCA$Pulling$Resources$fileAdapter_file"/>
+        </imp:properties>
+    </imp:exportedItemInfo>
+    <imp:exportedItemInfo instanceId="Rest_DB/Resources/dbRoles-properties" typeId="XML">
+        <imp:properties>
+            <imp:property name="representationversion" value="0"/>
+            <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.XmlEntryDocumentImpl"/>
+            <imp:property name="isencrypted" value="false"/>
+            <imp:property name="jarentryname" value="Rest_DB/Resources/dbRoles-properties.XML"/>
+        </imp:properties>
+    </imp:exportedItemInfo>
+    <imp:exportedItemInfo instanceId="Rest_DB/Resources/dbRoles_table" typeId="XMLSchema">
+        <imp:properties>
+            <imp:property name="representationversion" value="0"/>
+            <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.SchemaEntryDocumentImpl"/>
+            <imp:property name="isencrypted" value="false"/>
+            <imp:property name="jarentryname" value="Rest_DB/Resources/dbRoles_table.XMLSchema"/>
+        </imp:properties>
+    </imp:exportedItemInfo>
+    <imp:exportedItemInfo instanceId="Pulling/Resources/XSLNonDeployedFiles/restDB-Source" typeId="XML">
+        <imp:properties>
+            <imp:property name="representationversion" value="0"/>
+            <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.XmlEntryDocumentImpl"/>
+            <imp:property name="isencrypted" value="false"/>
+            <imp:property name="jarentryname" value="Pulling/Resources/XSLNonDeployedFiles/restDB-Source.XML"/>
+        </imp:properties>
+    </imp:exportedItemInfo>
+    <imp:exportedItemInfo instanceId="Pulling/Resources/dbAuditoria" typeId="WSDL">
+        <imp:properties>
+            <imp:property name="representationversion" value="0"/>
+            <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.WsdlEntryDocumentImpl"/>
+            <imp:property name="isencrypted" value="false"/>
+            <imp:property name="jarentryname" value="Pulling/Resources/dbAuditoria.WSDL"/>
+            <imp:property name="extrefs" value="XMLSchema$Pulling$Resources$dbAuditoria_table"/>
+        </imp:properties>
+    </imp:exportedItemInfo>
+    <imp:exportedItemInfo instanceId="Pulling/Resources/fileAdapter_file" typeId="JCA">
+        <imp:properties>
+            <imp:property name="representationversion" value="0"/>
+            <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.JcaEntryDocumentImpl"/>
+            <imp:property name="isencrypted" value="false"/>
+            <imp:property name="jarentryname" value="Pulling/Resources/fileAdapter_file.JCA"/>
+            <imp:property name="extrefs" value="WSDL$Pulling$Resources$fileAdapter"/>
+        </imp:properties>
+    </imp:exportedItemInfo>
+    <imp:exportedItemInfo instanceId="Pulling/Resources/fileAdapter" typeId="WSDL">
+        <imp:properties>
+            <imp:property name="representationversion" value="0"/>
+            <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.WsdlEntryDocumentImpl"/>
+            <imp:property name="isencrypted" value="false"/>
+            <imp:property name="jarentryname" value="Pulling/Resources/fileAdapter.WSDL"/>
+            <imp:property name="extrefs" value="XMLSchema$Pulling$Resources$SchemaFile"/>
+        </imp:properties>
+    </imp:exportedItemInfo>
+    <imp:exportedItemInfo instanceId="Pulling/Resources/XSLNonDeployedFiles/_folderdata" typeId="LocationData">
+        <imp:properties>
+            <imp:property name="representationversion" value="0"/>
+            <imp:property name="dataclass" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+            <imp:property name="isencrypted" value="false"/>
+            <imp:property name="jarentryname" value="Pulling/Resources/XSLNonDeployedFiles/_folderdata.LocationData"/>
+            <imp:property name="custom _special_data_class" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+        </imp:properties>
+    </imp:exportedItemInfo>
+    <imp:exportedItemInfo instanceId="Pulling/Resources/SchemaFile" typeId="XMLSchema">
+        <imp:properties>
+            <imp:property name="representationversion" value="0"/>
+            <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.SchemaEntryDocumentImpl"/>
+            <imp:property name="isencrypted" value="false"/>
+            <imp:property name="jarentryname" value="Pulling/Resources/SchemaFile.XMLSchema"/>
+        </imp:properties>
+    </imp:exportedItemInfo>
+    <imp:exportedItemInfo instanceId="Pulling/Resources/XSLNonDeployedFiles/fileTransform-Source" typeId="XML">
+        <imp:properties>
+            <imp:property name="representationversion" value="0"/>
+            <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.XmlEntryDocumentImpl"/>
+            <imp:property name="isencrypted" value="false"/>
+            <imp:property name="jarentryname" value="Pulling/Resources/XSLNonDeployedFiles/fileTransform-Source.XML"/>
+        </imp:properties>
+    </imp:exportedItemInfo>
+    <imp:exportedItemInfo instanceId="Pulling/Resources/dbToFile" typeId="XSLT">
+        <imp:properties>
+            <imp:property name="representationversion" value="0"/>
+            <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.XsltEntryDocumentImpl"/>
+            <imp:property name="isencrypted" value="false"/>
+            <imp:property name="jarentryname" value="Pulling/Resources/dbToFile.XSLT"/>
+            <imp:property name="extrefs" value="XMLSchema$Pulling$Resources$dbRoles_table"/>
+            <imp:property name="extrefs" value="XMLSchema$Pulling$Resources$SchemaFile"/>
+        </imp:properties>
+    </imp:exportedItemInfo>
+    <imp:exportedItemInfo instanceId="Pulling/AuditoriaRequest" typeId="BusinessService">
+        <imp:properties>
+            <imp:property name="representationversion" value="0"/>
+            <imp:property name="dataclass" value="com.oracle.xmlns.servicebus.business.config.impl.BusinessServiceEntryDocumentImpl"/>
+            <imp:property name="isencrypted" value="false"/>
+            <imp:property name="jarentryname" value="Pulling/AuditoriaRequest.BusinessService"/>
+            <imp:property name="extrefs" value="WADL$Pulling$Resources$AuditoriaRequest"/>
+            <imp:property name="extrefs" value="WSDL$Pulling$Resources$AuditoriaRequest"/>
+        </imp:properties>
+    </imp:exportedItemInfo>
+    <imp:exportedItemInfo instanceId="Pulling/Resources/XSLNonDeployedFiles/UnitTestURLs" typeId="DVM">
+        <imp:properties>
+            <imp:property name="representationversion" value="0"/>
+            <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.DvmEntryDocumentImpl"/>
+            <imp:property name="isencrypted" value="false"/>
+            <imp:property name="jarentryname" value="Pulling/Resources/XSLNonDeployedFiles/UnitTestURLs.DVM"/>
+        </imp:properties>
+    </imp:exportedItemInfo>
+    <imp:exportedItemInfo instanceId="Rest_DB/Resources/dbRoles-concrete" typeId="WSDL">
+        <imp:properties>
+            <imp:property name="representationversion" value="0"/>
+            <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.WsdlEntryDocumentImpl"/>
+            <imp:property name="isencrypted" value="false"/>
+            <imp:property name="jarentryname" value="Rest_DB/Resources/dbRoles-concrete.WSDL"/>
+            <imp:property name="extrefs" value="WSDL$Rest_DB$Resources$dbRoles"/>
+        </imp:properties>
+    </imp:exportedItemInfo>
+    <imp:exportedItemInfo instanceId="Pulling/Resources/AuditoriaRequest" typeId="WSDL">
+        <imp:properties>
+            <imp:property name="representationversion" value="0"/>
+            <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.WsdlEntryDocumentImpl"/>
+            <imp:property name="isencrypted" value="false"/>
+            <imp:property name="jarentryname" value="Pulling/Resources/AuditoriaRequest.WSDL"/>
+            <imp:property name="extrefs" value="XMLSchema$Pulling$Resources$dbRoles_table"/>
+        </imp:properties>
+    </imp:exportedItemInfo>
+    <imp:exportedItemInfo instanceId="Rest_DB/Resources/dbRoles_db" typeId="JCA">
+        <imp:properties>
+            <imp:property name="representationversion" value="0"/>
+            <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.JcaEntryDocumentImpl"/>
+            <imp:property name="isencrypted" value="false"/>
+            <imp:property name="jarentryname" value="Rest_DB/Resources/dbRoles_db.JCA"/>
+            <imp:property name="extrefs" value="XML$Rest_DB$Resources$dbRoles-or-mappings"/>
+            <imp:property name="extrefs" value="WSDL$Rest_DB$Resources$dbRoles"/>
+        </imp:properties>
+    </imp:exportedItemInfo>
+    <imp:exportedItemInfo instanceId="Rest_DB/_projectdata" typeId="LocationData">
+        <imp:properties>
+            <imp:property name="representationversion" value="0"/>
+            <imp:property name="dataclass" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+            <imp:property name="isencrypted" value="false"/>
+            <imp:property name="jarentryname" value="Rest_DB/_projectdata.LocationData"/>
+            <imp:property name="custom _special_data_class" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+        </imp:properties>
+    </imp:exportedItemInfo>
+    <imp:exportedItemInfo instanceId="Pulling/Resources/dbAuditoria_db" typeId="JCA">
+        <imp:properties>
+            <imp:property name="representationversion" value="0"/>
+            <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.JcaEntryDocumentImpl"/>
+            <imp:property name="isencrypted" value="false"/>
+            <imp:property name="jarentryname" value="Pulling/Resources/dbAuditoria_db.JCA"/>
+            <imp:property name="extrefs" value="WSDL$Pulling$Resources$dbAuditoria"/>
+            <imp:property name="extrefs" value="XML$Pulling$Resources$dbAuditoria-or-mappings"/>
+        </imp:properties>
+    </imp:exportedItemInfo>
+</xml-fragment>

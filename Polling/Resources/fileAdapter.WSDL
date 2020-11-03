@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:wsdlEntry xmlns:con="http://www.bea.com/wli/sb/resources/config">
+    <con:wsdl><![CDATA[<wsdl:definitions
+     name="fileAdapter"
+     targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/file/ClaseTresTarde/Pulling/fileAdapter"
+     xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/file/ClaseTresTarde/Pulling/fileAdapter"
+     xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/"
+     xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:imp1="http://www.examplefile.org"
+    >
+  <plt:partnerLinkType name="Write_plt" >
+    <plt:role name="Write_role" >
+      <plt:portType name="tns:Write_ptt" />
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/file/ClaseTresTarde/Pulling/fileAdapter"
+              xmlns="http://www.w3.org/2001/XMLSchema" >
+        <import namespace="http://www.examplefile.org" schemaLocation="SchemaFile.xsd" />
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="Write_msg">
+        <wsdl:part name="body" element="imp1:Entrada"/>
+    </wsdl:message>
+    <wsdl:portType name="Write_ptt">
+        <wsdl:operation name="Write">
+            <wsdl:input message="tns:Write_msg"/>
+            <wsdl:output message="tns:Write_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>]]></con:wsdl>
+    <con:dependencies>
+        <con:schemaRef isInclude="false" schemaLocation="SchemaFile.xsd" namespace="http://www.examplefile.org" ref="Pulling/Resources/SchemaFile"/>
+    </con:dependencies>
+    <con:targetNamespace>http://xmlns.oracle.com/pcbpel/adapter/file/ClaseTresTarde/Pulling/fileAdapter</con:targetNamespace>
+</con:wsdlEntry>

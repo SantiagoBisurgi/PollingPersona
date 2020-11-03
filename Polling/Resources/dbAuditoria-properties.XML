@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:xmlEntry xmlns:con="http://www.bea.com/wli/sb/resources/config">
+    <con:xml-content><![CDATA[<?xml version = '1.0' encoding = 'UTF-8'?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+   <entry key="APP.PERSONA.DOCUMENTO:db_column_not_null">false</entry>
+   <entry key="APP.PERSONA:db_column_4">PROCESADO</entry>
+   <entry key="APP.PERSONA.DOCUMENTO:db_column_type">INTEGER</entry>
+   <entry key="APP.PERSONA:db_column_3">FECHA_NACIMIENTO</entry>
+   <entry key="APP.PERSONA:db_column_2">NOMBRE</entry>
+   <entry key="APP.PERSONA:db_column_1">GENERO</entry>
+   <entry key="APP.PERSONA.GENERO:db_column_not_null">false</entry>
+   <entry key="APP.PERSONA:db_column_0">DOCUMENTO</entry>
+   <entry key="APP.PERSONA.GENERO:db_column_size">1</entry>
+   <entry key="APP.PERSONA.FECHA_NACIMIENTO:db_column_type">DATE</entry>
+   <entry key="APP.PERSONA.PROCESADO:db_column_not_null">false</entry>
+   <entry key="APP.PERSONA.PROCESADO:db_column_type">INTEGER</entry>
+   <entry key="return_single_result_set">false</entry>
+   <entry key="APP.PERSONA:db_table_type">TABLE</entry>
+   <entry key="APP.PERSONA.NOMBRE:db_column_type">VARCHAR</entry>
+   <entry key="APP.PERSONA.FECHA_NACIMIENTO:db_column_not_null">false</entry>
+   <entry key="root_descriptor_alias">APP.PERSONA</entry>
+   <entry key="APP.PERSONA.NOMBRE:db_column_not_null">true</entry>
+   <entry key="APP.PERSONA.GENERO:db_column_type">CHAR</entry>
+   <entry key="APP.PERSONA.NOMBRE:db_column_size">50</entry>
+</properties>]]></con:xml-content>
+</con:xmlEntry>

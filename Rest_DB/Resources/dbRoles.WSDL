@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:wsdlEntry xmlns:con="http://www.bea.com/wli/sb/resources/config">
+    <con:wsdl><![CDATA[<wsdl:definitions
+     name="dbRoles"
+     targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/ClaseTresTarde/Rest_DB/dbRoles"
+     xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/ClaseTresTarde/Rest_DB/dbRoles"
+     xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/"
+     xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
+     xmlns:top="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbRoles"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    >
+  <plt:partnerLinkType name="dbRoles_plt" >
+    <plt:role name="dbRoles_role" >
+      <plt:portType name="tns:dbRoles_ptt" />
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" >
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbRoles" schemaLocation="dbRoles_table.xsd" />
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="dbRolesSelect_inputParameters">
+        <wsdl:part name="dbRolesSelect_inputParameters" element="top:dbRolesSelect_dniInputParameters"/>
+    </wsdl:message>
+    <wsdl:message name="RolesCollection_msg">
+        <wsdl:part name="RolesCollection" element="top:RolesCollection"/>
+    </wsdl:message>
+    <wsdl:portType name="dbRoles_ptt">
+        <wsdl:operation name="insert">
+            <wsdl:input message="tns:RolesCollection_msg"/>
+        </wsdl:operation>
+        <wsdl:operation name="dbRolesSelect">
+            <wsdl:input message="tns:dbRolesSelect_inputParameters"/>
+            <wsdl:output message="tns:RolesCollection_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>]]></con:wsdl>
+    <con:dependencies>
+        <con:schemaRef isInclude="false" schemaLocation="dbRoles_table.xsd" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbRoles" ref="Rest_DB/Resources/dbRoles_table"/>
+    </con:dependencies>
+    <con:targetNamespace>http://xmlns.oracle.com/pcbpel/adapter/db/ClaseTresTarde/Rest_DB/dbRoles</con:targetNamespace>
+</con:wsdlEntry>

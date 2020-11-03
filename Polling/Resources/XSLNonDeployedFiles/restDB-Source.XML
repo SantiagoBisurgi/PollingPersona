@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:xmlEntry xmlns:con="http://www.bea.com/wli/sb/resources/config">
+    <con:xml-content><![CDATA[<?xml version="1.0" encoding="UTF-8" ?>
+<PersonaCollection xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbAuditoria">
+   <Persona>
+      <documento>19166934</documento>
+      <genero>F</genero>
+      <nombre>pepe</nombre>
+      <fechaNacimiento>2020-09-30T14:33:06.700</fechaNacimiento>
+      <procesado>24</procesado>
+   </Persona>
+</PersonaCollection>]]></con:xml-content>
+</con:xmlEntry>

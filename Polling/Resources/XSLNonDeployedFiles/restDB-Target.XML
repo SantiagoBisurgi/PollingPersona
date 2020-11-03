@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:xmlEntry xmlns:con="http://www.bea.com/wli/sb/resources/config">
+    <con:xml-content><![CDATA[<?xml version = '1.0' encoding = 'UTF-8'?>
+<tns:RolesCollection xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbRoles" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbRoles file:/C:/JDeveloper/mywork/ClaseTresTarde/Pulling/Resources/dbRoles_table.xsd">
+   <tns:Roles>
+      <tns:id>19166934</tns:id>
+      <tns:nombre>pepe</tns:nombre>
+      <tns:rolIdPadre>Madre</tns:rolIdPadre>
+   </tns:Roles>
+</tns:RolesCollection>]]></con:xml-content>
+</con:xmlEntry>
